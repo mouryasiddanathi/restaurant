@@ -37,8 +37,6 @@
                   </div>
               </div>
 
-
-              
           <div class="card">
           <img src="biryani.jpeg" alt="chicken Biryani">
               <div class="card-details">
@@ -51,7 +49,6 @@
                   </div>
               </div>
 
-              
           <div class="card">
           <img src="bailey.jpeg" alt="Water">
               <div class="card-details">
@@ -63,7 +60,6 @@
                       </div>
                   </div>
               </div>
-
 
           <div class="card">
           <img src="parcel.jpeg" alt="parcel">
@@ -77,8 +73,6 @@
                   </div>
               </div>
 
-
-              
           <div class="card">
           <img src="double.jpeg" alt="parcel">
               <div class="card-details">
@@ -91,7 +85,6 @@
                   </div>
               </div>
 
-              
           <div class="card">
           <img src="curry.jpeg" alt="curry">
               <div class="card-details">
@@ -104,7 +97,6 @@
                   </div>
               </div>
 
-              
           <div class="card">
           <img src="pappu.jpeg" alt="pappu">
               <div class="card-details">
@@ -117,8 +109,6 @@
                   </div>
               </div>
 
-
-              
           <div class="card">
           <img src="fry.jpeg" alt="fry">
               <div class="card-details">
@@ -131,7 +121,6 @@
                   </div>
               </div>
 
-              
           <div class="card">
           <img src="sambar.jpeg" alt="sambar">
               <div class="card-details">
@@ -143,32 +132,39 @@
                       </div>
                   </div>
               </div>
-
-
-      </div>
-
-    
-      
-        <div class="billing-sidebar">
-            <h2>Order Bill</h2>
-            <ul id="bill-items-list" class="bill-items">
-                <div class="empty-message" id="empty-msg">No items added to the bill yet.</div>
-            </ul>
-            
-            <div class="total-section">
-                <div class="total-row">
-                    <span>Grand Total:</span>
-                    <span id="bill-result">₹0</span>
-                </div>
-                <button class="checkout-btn" onclick="processOrder()">Place Order</button>
-            </div>
-        </div>
     </div>
 
+    <div class="billing-sidebar">
+        <h2>Order Bill</h2>
+        <ul id="bill-items-list" class="bill-items">
+            <div class="empty-message" id="empty-msg">No items added to the bill yet.</div>
+        </ul>
+        
+        <div class="total-section">
+            <div class="total-row">
+                <span>Grand Total:</span>
+                <span id="bill-result">₹0</span>
+            </div>
+            <button class="checkout-btn" onclick="processOrder()">Place Order</button>
+        </div>
+    </div>
   </div>
 
-  <script src="app.js">
-        // Store items as key-value pairs: { "Item Name": { price: 100, qty: 1 } }
-    </script>
+  <!-- ===== DAILY SALES DASHBOARD ===== -->
+  <div class="sales-section">
+    <div class="sales-section-header">
+      <div class="sales-title-group">
+        <h2 class="sales-main-title">📊 Daily Sales Report</h2>
+        <p class="sales-subtitle">All orders and revenue tracked automatically</p>
+      </div>
+      <button class="clear-sales-btn" onclick="clearAllSales()">🗑️ Clear History</button>
+    </div>
+
+    <div id="sales-dashboard">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
