@@ -9,6 +9,45 @@ function addItem(name, price) {
     }
     totalBill += price;
     renderBill();
+    updateItemControls();
+}
+
+function decreaseItem(name) {
+    if (cart[name]) {
+        cart[name].qty -= 1;
+        totalBill -= cart[name].price;
+        if (cart[name].qty === 0) {
+            delete cart[name];
+        }
+        renderBill();
+        updateItemControls();
+    }
+}
+
+function updateItemControls() {
+    document.querySelectorAll('.item-controls').forEach(container => {
+        const name = container.getAttribute('data-name');
+        const price = parseFloat(container.getAttribute('data-price'));
+        
+        if (cart[name] && cart[name].qty > 0) {
+            container.innerHTML = `
+                <button class="qty-btn" onclick="decreaseItem('${name}')">-</button>
+                <span class="qty-display">${cart[name].qty}</span>
+                <button class="qty-btn" onclick="addItem('${name}', ${price})">+</button>
+            `;
+        } else {
+            container.innerHTML = `<button class="add-btn" onclick="addItem('${name}', ${price})">Add</button>`;
+        }
+    });
+}
+
+function removeItem(name) {
+    if (cart[name]) {
+        totalBill -= cart[name].price * cart[name].qty;
+        delete cart[name];
+        renderBill();
+        updateItemControls();
+    }
 }
 
 function renderBill() {
@@ -34,7 +73,10 @@ function renderBill() {
                 <strong>${name}</strong>
                 <span class="qty">Qty: ${item.qty} x ₹${item.price}</span>
             </div>
-            <div><strong>₹${item.qty * item.price}</strong></div>
+            <div class="bill-item-right">
+                <strong>₹${item.qty * item.price}</strong>
+                <button class="remove-btn" onclick="removeItem('${name}')" title="Remove item">✕</button>
+            </div>
         `;
         listContainer.appendChild(li);
     });
@@ -44,7 +86,7 @@ function renderBill() {
 
 function getTodayKey() {
     const now = new Date();
-    return now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+    return now.toISOString().split('T')[0];
 }
 
 function getFormattedTime() {
@@ -76,10 +118,14 @@ function saveOrder() {
         subtotal: info.qty * info.price
     }));
 
+    const noteInput = document.getElementById('bill-note');
+    const note = noteInput ? noteInput.value.trim() : '';
+
     const order = {
         time: getFormattedTime(),
         items: orderItems,
         total: totalBill,
+        note: note,
         orderId: Date.now()
     };
 
@@ -98,7 +144,10 @@ function processOrder() {
         alert(`✅ Order Placed! Bill Amount: ₹${totalBill}\nSaved to today's sales record.`);
         cart = {};
         totalBill = 0;
+        const noteInput = document.getElementById('bill-note');
+        if (noteInput) noteInput.value = '';
         renderBill();
+        updateItemControls();
     }
 }
 
@@ -118,7 +167,7 @@ function clearAllSales() {
 function renderSalesDashboard() {
     const dashboard = document.getElementById('sales-dashboard');
     const salesData = getSalesData();
-    const dateKeys = Object.keys(salesData).sort((a, b) => b.localeCompare(a)); // newest first
+    const dateKeys = Object.keys(salesData).sort((a, b) => b.localeCompare(a));
 
     if (dateKeys.length === 0) {
         dashboard.innerHTML = `
@@ -129,7 +178,6 @@ function renderSalesDashboard() {
         return;
     }
 
-    // Overall totals
     let grandTotal = 0;
     let totalOrders = 0;
     dateKeys.forEach(key => {
@@ -193,6 +241,14 @@ function renderSalesDashboard() {
                         </div>`;
             });
 
+            if (order.note) {
+                html += `
+                        <div class="order-note-row">
+                            <span class="order-note-label">📝 Note:</span>
+                            <span class="order-note-text">${order.note}</span>
+                        </div>`;
+            }
+
             html += `
                     </div>
                 </div>`;
@@ -204,7 +260,7 @@ function renderSalesDashboard() {
     dashboard.innerHTML = html;
 }
 
-// Init on page load
 window.addEventListener('DOMContentLoaded', () => {
     renderSalesDashboard();
+    updateItemControls();
 });

@@ -1,137 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Nagaraju Grand Restaurant</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Nagraj Grand Restaurant</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="container">
-    <img src="images/nagrajur.png" alt="nagaraju logo" style="width: 300px; height: 150px;">
-    <h1>Nagraju Grand Restaurant</h1>
+    <img src="images/nagrajur.png" alt="nagraj logo" style="width: 300px; height: 150px;">
+    <h1>Nagraj Grand Restaurant</h1>
     <span>Good food, good mood</span>
   </div>
   <div class="menu">
     <h2>Signature Dishes</h2>
     <div class="menu-grid">
+      
       <div class="card">
           <img src="images/vegmeals.jpeg" alt="veg meals">
-              <div class="card-details">
-                  <div class="item-name">Veg meals</div>
-                        <div class="item-desc">vegetarian meals with delicious curries</div>
-                          <div class="card-action">
-                            <span class="price">₹110</span>
-                            <button class="add-btn" onclick="addItem('Veg meals', 110)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Veg meals</div>
+              <div class="item-desc">vegetarian meals with delicious curries</div>
+              <div class="card-action">
+                  <span class="price">₹110</span>
+                  <div class="item-controls" data-name="Veg meals" data-price="110">
+                      <button class="add-btn" onclick="addItem('Veg meals', 110)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/chicken.jpeg" alt="chicken curry">
-              <div class="card-details">
-                  <div class="item-name">Chicken curry</div>
-                        <div class="item-desc">Chicken currie spicy</div>
-                          <div class="card-action">
-                            <span class="price">₹120</span>
-                            <button class="add-btn" onclick="addItem('chicken curry', 120)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Chicken curry</div>
+              <div class="item-desc">Chicken currie spicy</div>
+              <div class="card-action">
+                  <span class="price">₹120</span>
+                  <div class="item-controls" data-name="chicken curry" data-price="120">
+                      <button class="add-btn" onclick="addItem('chicken curry', 120)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/biryani.jpeg" alt="chicken Biryani">
-              <div class="card-details">
-                  <div class="item-name">Chicken Biryani</div>
-                        <div class="item-desc">Delicious chicken biryani with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹200</span>
-                            <button class="add-btn" onclick="addItem('chicken Biryani', 200)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Chicken Biryani</div>
+              <div class="item-desc">Delicious chicken biryani with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹200</span>
+                  <div class="item-controls" data-name="chicken Biryani" data-price="200">
+                      <button class="add-btn" onclick="addItem('chicken Biryani', 200)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/bailey.jpeg" alt="Water">
-              <div class="card-details">
-                  <div class="item-name">Water</div>
-                        <div class="item-desc">Refreshing water to quench your thirst</div>
-                          <div class="card-action">
-                            <span class="price">₹10</span>
-                            <button class="add-btn" onclick="addItem('water', 10)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Water</div>
+              <div class="item-desc">Refreshing water to quench your thirst</div>
+              <div class="card-action">
+                  <span class="price">₹10</span>
+                  <div class="item-controls" data-name="water" data-price="10">
+                      <button class="add-btn" onclick="addItem('water', 10)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/parcel.jpeg" alt="parcel">
-              <div class="card-details">
-                  <div class="item-name">Parcel</div>
-                        <div class="item-desc">Delicious parcel with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹120</span>
-                            <button class="add-btn" onclick="addItem('parcel', 120)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Parcel</div>
+              <div class="item-desc">Delicious parcel with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹120</span>
+                  <div class="item-controls" data-name="parcel" data-price="120">
+                      <button class="add-btn" onclick="addItem('parcel', 120)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/double.jpeg" alt="parcel">
-              <div class="card-details">
-                  <div class="item-name">Double Parcel</div>
-                        <div class="item-desc">Delicious double portion of parcel with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹140</span>
-                            <button class="add-btn" onclick="addItem('double parcel', 140)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Double Parcel</div>
+              <div class="item-desc">Delicious double portion of parcel with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹140</span>
+                  <div class="item-controls" data-name="double parcel" data-price="140">
+                      <button class="add-btn" onclick="addItem('double parcel', 140)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/curry.jpeg" alt="curry">
-              <div class="card-details">
-                  <div class="item-name">curry</div>
-                        <div class="item-desc">Delicious veg curry with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹30</span>
-                            <button class="add-btn" onclick="addItem('curry', 30)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">curry</div>
+              <div class="item-desc">Delicious veg curry with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹30</span>
+                  <div class="item-controls" data-name="curry" data-price="30">
+                      <button class="add-btn" onclick="addItem('curry', 30)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/pappu.jpeg" alt="pappu">
-              <div class="card-details">
-                  <div class="item-name">Pappu Curry</div>
-                        <div class="item-desc">Delicious pappu curry with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹30</span>
-                            <button class="add-btn" onclick="addItem('pappu curry', 30)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Pappu Curry</div>
+              <div class="item-desc">Delicious pappu curry with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹30</span>
+                  <div class="item-controls" data-name="pappu curry" data-price="30">
+                      <button class="add-btn" onclick="addItem('pappu curry', 30)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
+      <div class="card">
           <img src="images/fry.jpeg" alt="fry">
-              <div class="card-details">
-                  <div class="item-name">Fry curry</div>
-                        <div class="item-desc">Delicious fry with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹20</span>
-                            <button class="add-btn" onclick="addItem('fry curry', 20)">Add</button>
-                      </div>
+          <div class="card-details">
+              <div class="item-name">Fry curry</div>
+              <div class="item-desc">Delicious fry with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹20</span>
+                  <div class="item-controls" data-name="fry curry" data-price="20">
+                      <button class="add-btn" onclick="addItem('fry curry', 20)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
 
-          <div class="card">
-          <img src="images/sambar.jpeg" alt="sambar">
-              <div class="card-details">
-                  <div class="item-name">Sambar</div>
-                        <div class="item-desc">Delicious sambar with aromatic spices</div>
-                          <div class="card-action">
-                            <span class="price">₹20</span>
-                            <button class="add-btn" onclick="addItem('sambar', 20)">Add</button>
-                      </div>
+
+      
+      <div class="card">
+          <img src="images/plate.jpeg" alt="plate">
+          <div class="card-details">
+              <div class="item-name">Plate meals</div>
+              <div class="item-desc">Delicious plate meals with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹100</span>
+                  <div class="item-controls" data-name="plate meals" data-price="100">
+                      <button class="add-btn" onclick="addItem('plate meals', 100)">Add</button>
                   </div>
               </div>
+          </div>
+      </div>
+
+
+      
+      <div class="card">
+          <img src="images/platepar.jpeg" alt="plate">
+          <div class="card-details">
+              <div class="item-name">Plate meals parcel</div>
+              <div class="item-desc">Delicious plate meals parcel with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹80</span>
+                  <div class="item-controls" data-name="plate meals parcel" data-price="80">
+                      <button class="add-btn" onclick="addItem('plate meals parcel', 80)">Add</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      
+      
+      <div class="card">
+          <img src="images/chickenparcel.jpeg" alt="plate">
+          <div class="card-details">
+              <div class="item-name">Chicken curry parcel</div>
+              <div class="item-desc">Delicious chicken curry parcel with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹150</span>
+                  <div class="item-controls" data-name="chicken curry parcel" data-price="150">
+                      <button class="add-btn" onclick="addItem('chicken curry parcel', 150)">Add</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      
+      
+      <div class="card">
+          <img src="images/rice.jpeg" alt="plate">
+          <div class="card-details">
+              <div class="item-name">Rice</div>
+              <div class="item-desc">Delicious rice with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹30</span>
+                  <div class="item-controls" data-name="rice" data-price="30">
+                      <button class="add-btn" onclick="addItem('rice', 30)">Add</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+      
+      
+      <div class="card">
+          <img src="images/vegbiryani.jpeg" alt="plate">
+          <div class="card-details">
+              <div class="item-name">veg biryani</div>
+              <div class="item-desc">Delicious veg biryani with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹100</span>
+                  <div class="item-controls" data-name="veg biryani" data-price="100">
+                      <button class="add-btn" onclick="addItem('veg biryani', 100)">Add</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="images/sambar.jpeg" alt="sambar">
+          <div class="card-details">
+              <div class="item-name">Sambar</div>
+              <div class="item-desc">Delicious sambar with aromatic spices</div>
+              <div class="card-action">
+                  <span class="price">₹20</span>
+                  <div class="item-controls" data-name="sambar" data-price="20">
+                      <button class="add-btn" onclick="addItem('sambar', 20)">Add</button>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
 
     <div class="billing-sidebar">
@@ -144,6 +248,10 @@
             <div class="total-row">
                 <span>Grand Total:</span>
                 <span id="bill-result">₹0</span>
+            </div>
+            <div class="note-section">
+                <label for="bill-note" class="note-label">📝 Add a note</label>
+                <textarea id="bill-note" class="bill-note-input" placeholder="e.g. less spicy, extra rice, table 4..."></textarea>
             </div>
             <button class="checkout-btn" onclick="processOrder()">Place Order</button>
         </div>
